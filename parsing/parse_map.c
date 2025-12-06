@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_map.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lemarino <lemarino@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/21 12:29:55 by adegl-in          #+#    #+#             */
+/*   Updated: 2025/12/03 16:15:21 by lemarino         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d.h"
 
 // Saves the map sizes and the map itself as a char matrix in the map struct.
@@ -34,10 +46,12 @@ bool	valid_map(t_map *map, char **grid)
 	j = 0;
 	while (grid[i] && map->n_players < 2)
 	{
-		if (grid[i][0] == '\n')
+		if (grid[i][j] == '\n')
 			return ((ft_printfd(2, RED"Error\nInvalid map\n"NO_ALL), 0));
 		while (grid[i][j])
 		{
+			if (!ft_strchr(grid[i], '1'))
+				return (ft_printfd(2, RED"Error\nInvalid map\n"NO_ALL), 0);
 			if (grid[i][j] == '0' || is_player(grid[i][j]))
 				if (!valid_surroundings(map, grid, i, j))
 					return (ft_printfd(2, RED"Error\nInvalid map\n"NO_ALL), 0);

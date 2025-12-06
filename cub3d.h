@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adegl-in <adegl-in@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/24 10:25:59 by adegl-in          #+#    #+#             */
+/*   Updated: 2025/11/24 10:30:02 by adegl-in         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CUB3D_H
 # define CUB3D_H
 
@@ -140,8 +152,8 @@ typedef struct s_map
 
 typedef struct s_minimap
 {
-	float		pos_x;
-	float		pos_y;
+	float	pos_x;
+	float	pos_y;
 	float	ray_x;
 	float	ray_y;
 	float	move_speed;

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hooks.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: adegl-in <adegl-in@student.42firenze.it>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/24 10:25:59 by adegl-in          #+#    #+#             */
+/*   Updated: 2025/11/24 10:28:15 by adegl-in         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "./cub3d.h"
 
 int	on_destroy(t_game *game)
@@ -34,9 +46,9 @@ int	ft_game_loop(t_game *game)
 	return (0);
 }
 
+/* Toggle minimap based on current scale instead of a static flag. */
 static int	on_key_press(int keysym, t_game *game)
 {
-	/* Toggle minimap based on current scale instead of a static flag. */
 	if (keysym == XK_Escape)
 		on_destroy(game);
 	else if (keysym == XK_m || keysym == XK_M)
